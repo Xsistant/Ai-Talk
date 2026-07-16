@@ -167,7 +167,9 @@
 
   .details{
     display:grid;grid-template-columns:1fr 1fr;gap:0;margin:38px auto 0;max-width:520px;
-    border:1px solid var(--line);border-radius:8px;overflow:hidden;background:var(--card)
+    border:1px solid var(--line);border-radius:10px;overflow:hidden;
+    background:rgba(9,38,33,.34);
+    box-shadow:0 18px 40px -24px rgba(0,0,0,.5);
   }
   .detail{padding:26px 22px;text-align:center}
   .detail + .detail{border-left:1px solid var(--line)}
@@ -177,8 +179,8 @@
     text-transform:uppercase;letter-spacing:.16em;font-size:.66rem;color:var(--gold);
     font-weight:700;margin-bottom:7px
   }
-  .detail .val{font-size:1.05rem;line-height:1.45;color:var(--ink)}
-  .detail .val .big{display:block;font-size:1.5rem;font-weight:700;letter-spacing:-.01em}
+  .detail .val{font-size:1.05rem;line-height:1.45;color:#d7ebe7}
+  .detail .val .big{display:block;font-size:1.5rem;font-weight:700;letter-spacing:-.01em;color:#fff}
   .detail.full{grid-column:1 / -1;border-left:0;border-top:1px solid var(--line)}
 
   .gift{
