@@ -226,9 +226,23 @@
   .map-link{display:inline-block;margin-top:.5rem;font-size:.85rem;font-weight:700;color:var(--teal);text-decoration:none}
   .map-link:hover{color:var(--amber)}
   /* ===== LOKASI / PETA ===== */
-  .lokasi{margin-top:2.5rem}
-  .lokasi h2{font-size:1.25rem;font-weight:800;margin-bottom:.35rem}
-  .lokasi-addr{color:var(--mist);font-size:.9rem;line-height:1.55;margin-bottom:1rem;max-width:34rem}
+  .lokasi{
+    background-color:var(--navy2);padding:64px 24px;
+    background-image:
+      radial-gradient(circle 9px at 0 50%, var(--hole) 8px, transparent 9px),
+      radial-gradient(circle 9px at 100% 50%, var(--hole) 8px, transparent 9px);
+    background-size:100% 56px;background-repeat:repeat-y
+  }
+  .lokasi .kicker{
+    font-family:'JetBrains Mono',ui-monospace,monospace;font-size:.72rem;
+    font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--amber);
+    margin-bottom:12px
+  }
+  .lokasi h2{max-width:24rem;line-height:1.05}
+  .lokasi-addr{
+    color:var(--mist);font-size:.95rem;line-height:1.6;
+    margin-top:16px;margin-bottom:28px;max-width:34rem
+  }
   .map-frame{position:relative;border-radius:.6rem;overflow:hidden;border:1.5px solid rgba(21,169,156,.35)}
   .map-frame iframe{display:block;width:100%;height:20rem;border:0}
   .map-fab{
@@ -265,7 +279,7 @@
   .daftar:active{transform:translateY(0) scale(.98)}
   .seats{margin-top:12px;font-size:.875rem;font-weight:600;color:var(--amber)}
   .host{
-    margin-top:64px;padding-top:24px;border-top:1px solid rgba(255,255,255,.1);
+    background:var(--navy);padding:32px 24px 40px;
     text-align:center;font-size:.875rem;color:var(--mist)
   }
   .host strong{color:#fff;font-weight:700}
@@ -439,33 +453,36 @@
         <p class="seats">Tempat terbatas</p>
       </div>
     </div>
-    <!-- ===== LOKASI / PETA ===== -->
-    <div class="lokasi" id="lokasi">
-      <h2>Lokasi &amp; Petunjuk Arah</h2>
-      <p class="lokasi-addr">Jl. Cideng Timur No.6C, RT.04/RW.04, Petojo Utara, Kecamatan Gambir, Kota Jakarta Pusat 10130</p>
-      <div class="map-frame">
-        <iframe
-          src="https://maps.google.com/maps?q=-6.163207,106.8108406&amp;t=m&amp;z=17&amp;output=embed&amp;iwloc=near"
-          title="Peta lokasi Bethel Citichurch"
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
-          allowfullscreen>
-        </iframe>
-        <a class="map-fab"
-           href="https://www.google.com/maps/dir/?api=1&amp;destination=-6.163207,106.8108406&amp;destination_place_id=ChIJLTKYyiH3aS4RPaLzn48KvSE"
-           target="_blank" rel="noopener noreferrer"
-           aria-label="Buka petunjuk arah ke Bethel Citichurch di Google Maps">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <polygon points="3 11 22 2 13 21 11 13 3 11"/>
-          </svg>
-          Petunjuk Arah
-        </a>
-      </div>
-    </div>
-    <footer class="host">
-      Dipersembahkan oleh <strong>Bethel Citichurch</strong>
-    </footer>
   </div>
 </section>
+<!-- ===== LOKASI / PETA ===== -->
+<section class="lokasi" id="lokasi">
+  <div class="wrap">
+    <p class="kicker">Lokasi</p>
+    <h2>Lokasi &amp; Petunjuk Arah</h2>
+    <p class="lokasi-addr">Jl. Cideng Timur No.6C, RT.04/RW.04, Petojo Utara, Kecamatan Gambir, Kota Jakarta Pusat 10130</p>
+    <div class="map-frame">
+      <iframe
+        src="https://maps.google.com/maps?q=-6.163207,106.8108406&amp;t=m&amp;z=17&amp;output=embed&amp;iwloc=near"
+        title="Peta lokasi Bethel Citichurch"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        allowfullscreen>
+      </iframe>
+      <a class="map-fab"
+         href="https://www.google.com/maps/dir/?api=1&amp;destination=-6.163207,106.8108406&amp;destination_place_id=ChIJLTKYyiH3aS4RPaLzn48KvSE"
+         target="_blank" rel="noopener noreferrer"
+         aria-label="Buka petunjuk arah ke Bethel Citichurch di Google Maps">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <polygon points="3 11 22 2 13 21 11 13 3 11"/>
+        </svg>
+        Petunjuk Arah
+      </a>
+    </div>
+  </div>
+</section>
+<footer class="host">
+  Dipersembahkan oleh <strong>Bethel Citichurch</strong>
+</footer>
 </body>
 </html>
