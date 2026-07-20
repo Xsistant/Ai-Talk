@@ -96,6 +96,14 @@
   .date-block .d24{font-size:clamp(4.5rem,12vw,6rem);font-weight:800;line-height:.85;letter-spacing:-.04em}
   .date-block .dmy{padding-top:4px;font-size:clamp(1.25rem,3vw,1.5rem);font-weight:700;line-height:1.15}
   .hero-meta{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:.8rem;line-height:1.7;color:var(--mist)}
+  .hero-dir{
+    display:inline-flex;align-items:center;gap:.4rem;margin-top:.5rem;
+    font-family:'JetBrains Mono',ui-monospace,monospace;font-size:.8rem;font-weight:700;
+    color:var(--amber);text-decoration:none;border-bottom:1px solid rgba(251,176,64,.5);
+    padding-bottom:1px;transition:color .15s,border-color .15s
+  }
+  .hero-dir:hover{color:#fff;border-color:#fff}
+  .hero-dir svg{width:14px;height:14px;display:block}
   /* ===== SPEAKERS ===== */
   .speakers{
     background-color:var(--navy2);padding:64px 24px;
@@ -176,14 +184,18 @@
   .lokasi{margin-top:2.5rem}
   .lokasi h2{font-size:1.25rem;font-weight:800;margin-bottom:.35rem}
   .lokasi-addr{color:var(--mist);font-size:.9rem;line-height:1.55;margin-bottom:1rem;max-width:34rem}
-  .map-frame{border-radius:.6rem;overflow:hidden;border:1.5px solid rgba(21,169,156,.35)}
+  .map-frame{position:relative;border-radius:.6rem;overflow:hidden;border:1.5px solid rgba(21,169,156,.35)}
   .map-frame iframe{display:block;width:100%;height:20rem;border:0}
-  .btn-row{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1rem}
-  .btn-map{display:inline-block;text-decoration:none;font-weight:700;padding:.8rem 1.4rem;border-radius:.5rem;font-size:.9rem}
-  .btn-map-primary{background:var(--amber);color:var(--ink)}
-  .btn-map-primary:hover{filter:brightness(1.06)}
-  .btn-map-ghost{border:1.5px solid var(--teal);color:var(--teal)}
-  .btn-map-ghost:hover{background:rgba(21,169,156,.12)}
+  .map-fab{
+    position:absolute;right:12px;bottom:12px;z-index:2;
+    display:inline-flex;align-items:center;gap:.5rem;
+    background:var(--amber);color:var(--ink);text-decoration:none;
+    font-weight:800;font-size:.9rem;padding:.7rem 1.1rem;border-radius:.6rem;
+    box-shadow:0 4px 14px rgba(0,0,0,.35);transition:transform .15s,filter .15s
+  }
+  .map-fab:hover{transform:translateY(-2px);filter:brightness(1.05)}
+  .map-fab:active{transform:translateY(0) scale(.98)}
+  .map-fab svg{width:18px;height:18px;display:block}
   .qr-zone{display:flex;flex-direction:column;align-items:center}
   .qr-plate{
     position:relative;display:block;background:#fff;border-radius:6px;padding:16px;
@@ -261,7 +273,18 @@
         <span class="d24">24</span>
         <span class="dmy">Juli<br>2026</span>
       </p>
-      <p class="hero-meta">Jumat &middot; 18.30 WIB<br>Bethel Citichurch, Jakarta Pusat</p>
+      <p class="hero-meta">
+        Jumat &middot; 18.30 WIB<br>Bethel Citichurch, Jakarta Pusat<br>
+        <a class="hero-dir"
+           href="https://www.google.com/maps/dir/?api=1&amp;destination=-6.163207,106.8108406&amp;destination_place_id=ChIJLTKYyiH3aS4RPaLzn48KvSE"
+           target="_blank" rel="noopener noreferrer"
+           aria-label="Buka petunjuk arah ke Bethel Citichurch di Google Maps">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polygon points="3 11 22 2 13 21 11 13 3 11"/>
+          </svg>
+          Petunjuk Arah
+        </a>
+      </p>
     </div>
   </div>
 </header>
@@ -348,23 +371,20 @@
       <p class="lokasi-addr">Jl. Cideng Timur No.6C, RT.04/RW.04, Petojo Utara, Kecamatan Gambir, Kota Jakarta Pusat 10130</p>
       <div class="map-frame">
         <iframe
-          src="https://maps.google.com/maps?q=-6.1632894,106.8108721&amp;t=m&amp;z=17&amp;output=embed&amp;iwloc=near"
+          src="https://maps.google.com/maps?q=-6.163207,106.8108406&amp;t=m&amp;z=17&amp;output=embed&amp;iwloc=near"
           title="Peta lokasi Bethel Citichurch"
           loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"
           allowfullscreen>
         </iframe>
-      </div>
-      <div class="btn-row">
-        <a class="btn-map btn-map-primary"
-           href="https://www.google.com/maps/dir/?api=1&amp;destination=-6.1632894,106.8108721"
-           target="_blank" rel="noopener noreferrer">
-          Petunjuk Arah di Google Maps &rarr;
-        </a>
-        <a class="btn-map btn-map-ghost"
-           href="https://www.google.com/maps/search/?api=1&amp;query=Bethel%20Citichurch&amp;query_place_id=ChIJLTKYyiH3aS4RPaLzn48KvSE"
-           target="_blank" rel="noopener noreferrer">
-          Buka Lokasi di Maps
+        <a class="map-fab"
+           href="https://www.google.com/maps/dir/?api=1&amp;destination=-6.163207,106.8108406&amp;destination_place_id=ChIJLTKYyiH3aS4RPaLzn48KvSE"
+           target="_blank" rel="noopener noreferrer"
+           aria-label="Buka petunjuk arah ke Bethel Citichurch di Google Maps">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polygon points="3 11 22 2 13 21 11 13 3 11"/>
+          </svg>
+          Petunjuk Arah
         </a>
       </div>
     </div>
