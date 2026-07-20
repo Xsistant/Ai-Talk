@@ -181,6 +181,21 @@
   .details dd{margin-top:6px;font-size:1.5rem;font-weight:700}
   .details dd small{font-size:1rem;font-weight:500;color:var(--mist)}
   .details dd.place{font-size:1.125rem;font-weight:600;line-height:1.45}
+  .map-link{display:inline-block;margin-top:.5rem;font-size:.85rem;font-weight:700;color:var(--teal);text-decoration:none}
+  .map-link:hover{color:var(--amber)}
+
+  /* ===== LOKASI / PETA ===== */
+  .lokasi{margin-top:2.5rem}
+  .lokasi h2{font-size:1.25rem;font-weight:800;margin-bottom:.35rem}
+  .lokasi-addr{color:var(--mist);font-size:.9rem;line-height:1.55;margin-bottom:1rem;max-width:34rem}
+  .map-frame{border-radius:.6rem;overflow:hidden;border:1.5px solid rgba(21,169,156,.35)}
+  .map-frame iframe{display:block;width:100%;height:20rem;border:0}
+  .btn-row{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1rem}
+  .btn-map{display:inline-block;text-decoration:none;font-weight:700;padding:.8rem 1.4rem;border-radius:.5rem;font-size:.9rem}
+  .btn-map-primary{background:var(--amber);color:var(--ink)}
+  .btn-map-primary:hover{filter:brightness(1.06)}
+  .btn-map-ghost{border:1.5px solid var(--teal);color:var(--teal)}
+  .btn-map-ghost:hover{background:rgba(21,169,156,.12)}
 
   .qr-zone{display:flex;flex-direction:column;align-items:center}
   .qr-plate{
@@ -310,7 +325,7 @@
       </li>
       <li>
         <span class="num" aria-hidden="true">2</span>
-        <p><strong>Demo Otomatisasi Dua Industri Paling Berpengaruh.</strong> Bandingkan cara manual yang mahal dan lambat dengan cara AI yang murah dan cepat.</p>
+        <p><strong>Demo Otomatisasi Dua Industri Paling Berpengaruh (Marketing &amp; Finance).</strong> Bandingkan cara manual yang mahal dan lambat dengan cara AI yang murah dan cepat.</p>
       </li>
       <li>
         <span class="num" aria-hidden="true">3</span>
@@ -336,7 +351,7 @@
         </div>
         <div>
           <dt>Tempat</dt>
-          <dd class="place">Jl. Cideng Timur 6C, Kel. Petojo Utara, Kec. Gambir, Jakarta Pusat</dd>
+          <dd class="place">Jl. Cideng Timur 6C, Kel. Petojo Utara, Kec. Gambir, Jakarta Pusat<br><a class="map-link" href="#lokasi">Lihat Peta &amp; Petunjuk Arah &darr;</a></dd>
         </div>
       </dl>
 
@@ -351,6 +366,33 @@
         <p class="qr-cap">Scan untuk daftar</p>
         <a class="daftar" href="https://forms.gle/9fVFnnPXyUGUSjBA6" target="_blank" rel="noopener noreferrer">Daftar Sekarang</a>
         <p class="seats">Tempat terbatas</p>
+      </div>
+    </div>
+
+    <!-- ===== LOKASI / PETA ===== -->
+    <div class="lokasi" id="lokasi">
+      <h2>Lokasi &amp; Petunjuk Arah</h2>
+      <p class="lokasi-addr">Jl. Cideng Timur No.6C, RT.04/RW.04, Petojo Utara, Kecamatan Gambir, Kota Jakarta Pusat 10130</p>
+      <div class="map-frame">
+        <iframe
+          src="https://maps.google.com/maps?q=-6.1632894,106.8108721&amp;t=m&amp;z=17&amp;output=embed&amp;iwloc=near"
+          title="Peta lokasi Bethel Citichurch"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          allowfullscreen>
+        </iframe>
+      </div>
+      <div class="btn-row">
+        <a class="btn-map btn-map-primary"
+           href="https://www.google.com/maps/dir/?api=1&amp;destination=-6.1632894,106.8108721"
+           target="_blank" rel="noopener noreferrer">
+          Petunjuk Arah di Google Maps &rarr;
+        </a>
+        <a class="btn-map btn-map-ghost"
+           href="https://www.google.com/maps/search/?api=1&amp;query=Bethel%20Citichurch&amp;query_place_id=ChIJLTKYyiH3aS4RPaLzn48KvSE"
+           target="_blank" rel="noopener noreferrer">
+          Buka Lokasi di Maps
+        </a>
       </div>
     </div>
 
